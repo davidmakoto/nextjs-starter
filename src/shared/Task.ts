@@ -7,11 +7,11 @@ import { Entity, Fields } from "remult"
 })
 export class Task {
   @Fields.autoIncrement()
-  id = 0
+  id = 0;
 
   @Fields.string()
-  title = ""
+  title = "";
 
   @Fields.boolean()
-  completed = false
+  completed = false;
 }

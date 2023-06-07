@@ -1,12 +1,32 @@
 // src/pages/index.tsx
 
-import { useEffect, useState } from "react"
+import { use, useEffect, useState } from "react"
 import { remult } from "remult"
 import { Task } from "../shared/Task"
+import { Service } from "../shared/Service"
 
 const taskRepo = remult.repo(Task)
+const serviceRepo = remult.repo(Service)
 
 export default function Home() {
+  const [services, setServices] = useState<Service[]>([])
+  const [newServiceTitle, setNewServiceTitle] = useState("")
+
+  const addService = async (e: FormEvent) => {
+    e.preventDefault()
+    try {
+      const newService = await serviceRepo.insert({ name: newServiceTitle })
+      setServices([...services, newService])
+      setNewServiceTitle("")
+    } catch (error: any) {
+      alert(error.message)
+    }
+  }
+  useEffect(() => {
+    serviceRepo.find().then(setServices)
+  }, [])
+
+
   const [tasks, setTasks] = useState<Task[]>([])
   const [newTaskTitle, setNewTaskTitle] = useState("")
 
@@ -22,10 +42,72 @@ export default function Home() {
   }
 
   useEffect(() => {
-    taskRepo.find().then(setTasks)
+    serviceRepo.find().then(setTasks)
   }, [])
   return (
     <div>
+      <div>
+      <h1>Services</h1>
+      <main>
+        <form onSubmit={addService}>
+          <input
+            value={newServiceTitle}
+            placeholder="Name of service?"
+            onChange={e => setNewServiceTitle(e.target.value)}
+          />
+          <button>Add</button>
+        </form>
+        {services.map(service => {
+            const setService = (value: Service) =>
+            setServices(services => services.map(s => (s === service ? value : s)))
+      
+          const setCompleted = async (completed: boolean) =>
+            setService(await serviceRepo.save({ ...service, completed }))
+
+          const setTitle = (title: string) => setService({ ...service, title })
+
+          const saveSerice = async () => {
+            try {
+              setService(await ServiceRepo.save(service))
+            } catch (error: any) {
+              alert(error.message)
+            }
+          }
+
+          const deleteService = async () => {
+            try {
+              await serviceRepo.delete(service)
+              setServices(services.filter(s => s !== service))
+            } catch (error: any) {
+              alert(error.message)
+            }
+          }
+          return (
+            <div key={service.id}>
+            <input
+              type="checkbox"
+              checked={service.completed}
+              onChange={e => setCompleted(e.target.checked)}
+            />
+            <input value={service.title} onChange={e => setTitle(e.target.value)} />
+            <button onClick={saveService}>Save</button>
+            <button onClick={deleteSerivce}>Delete</button>
+          </div>
+          )
+        })}
+      </main>
+
+      </div>
+
+
+
+
+
+
+
+
+      
+      <div>
       <h1>Todos</h1>
       <main>
         <form onSubmit={addTask}>
@@ -75,6 +157,7 @@ export default function Home() {
           )
         })}
       </main>
+      </div>
     </div>
   )
 }
