@@ -8,13 +8,13 @@ import { Specialist } from "./Specialist"
 export class Service extends IdEntity {
     @Fields.autoIncrement()
     id = 0;
-    
+
     @Fields.string()
     title = "";
 
     @Fields.string()
     name = "";
-    
+
     @Fields.string()
     description = "";
 
@@ -26,7 +26,7 @@ export class Service extends IdEntity {
 
     @Fields.string()
     image = "";
-    
+
     @Field(() => Specialist)
     specialist?: Specialist;
 }
