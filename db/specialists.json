@@ -1,0 +1,47 @@
+[
+  {
+    "id": 1,
+    "name": "",
+    "email": "",
+    "phone": "",
+    "specality": "",
+    "location": "",
+    "password": "",
+    "availability": "",
+    "appointmentId": 0
+  },
+  {
+    "id": 2,
+    "name": "Haircut",
+    "email": "",
+    "phone": "",
+    "specality": "",
+    "location": "",
+    "password": "",
+    "availability": "",
+    "appointmentId": 0
+  },
+  {
+    "id": 3,
+    "name": "Bertha",
+    "email": "",
+    "phone": "",
+    "specality": "",
+    "location": "",
+    "password": "",
+    "availability": "",
+    "appointmentId": 0
+  },
+  {
+    "id": 4,
+    "name": "Mertle",
+    "email": "",
+    "phone": "",
+    "specality": "",
+    "location": "",
+    "password": "",
+    "availability": "",
+    "appointmentId": 0,
+    "appointments": []
+  }
+]

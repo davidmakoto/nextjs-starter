@@ -1,0 +1,89 @@
+[
+  {
+    "id": 1,
+    "title": "",
+    "name": "wreak havoc",
+    "description": "",
+    "price": "",
+    "duration": "",
+    "specialistId": 0
+  },
+  {
+    "id": 2,
+    "title": "",
+    "name": "meet with specialist",
+    "description": "",
+    "price": "",
+    "duration": "",
+    "specialist": "Bertha",
+    "specialistId": 0
+  },
+  {
+    "id": 3,
+    "title": "",
+    "name": "meet with specialist",
+    "description": "",
+    "price": "",
+    "duration": "",
+    "specialistId": 0
+  },
+  {
+    "id": 4,
+    "title": "",
+    "name": "meet with specialist",
+    "description": "",
+    "price": "",
+    "duration": "",
+    "specialist_assigned": [],
+    "specialistId": 0
+  },
+  {
+    "id": 5,
+    "title": "",
+    "name": "meet with specialist",
+    "description": "",
+    "price": "",
+    "duration": "",
+    "specialist_assigned": "Bertha",
+    "specialistId": 0
+  },
+  {
+    "id": 6,
+    "title": "",
+    "name": "meet with specialist",
+    "description": "",
+    "price": "",
+    "duration": "",
+    "specialist_assigned": "Specialist.Bertha",
+    "specialistId": 0
+  },
+  {
+    "id": 7,
+    "title": "",
+    "name": "meet with specialist",
+    "description": "",
+    "price": "",
+    "duration": "",
+    "specialist_assigned": [],
+    "specialistId": 0
+  },
+  {
+    "id": 8,
+    "title": "",
+    "name": "meet with specialist",
+    "description": "",
+    "price": "",
+    "duration": "",
+    "specialistId": 1
+  },
+  {
+    "id": 9,
+    "title": "",
+    "name": "specialist meeting",
+    "description": "",
+    "price": "",
+    "duration": "",
+    "specialistId": 3,
+    "specialist_assigned": []
+  }
+]
